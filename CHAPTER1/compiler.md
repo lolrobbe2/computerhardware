@@ -1,5 +1,10 @@
 # introduction
 
+
+- [introduction](#introduction)
+  - [Compiler vs Interpreter](#compiler-vs-interpreter)
+  - [Compilation and interpretation](#compilation-and-interpretation)
+
 Compilers and interpreters are two different ways to execute programs.  
 Compilation translates code before running it, while interpretation executes it step by step.
 
