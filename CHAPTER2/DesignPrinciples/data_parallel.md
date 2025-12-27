@@ -5,3 +5,4 @@
 ## Data Parallel computing (GPU)
 
 ![Data Parallel Computing](../img/gpu_compute.png)
+
