@@ -74,3 +74,9 @@ but we can use this bit for a `parity check` of the first bit that whey we can c
 > there is a better version calculating the error position of this using `xor`: by xor'ing all the `true` bits binary positions the bit flip position comes out at the end
 
 ![ECC](../CHAPTER2/img/ecc_overhead.png)
+
+## Cache
+
+a cache is a small and fast region of memory that in the case of hardware sits next to the CPU cores, wich makes it very fast
+
+![cache simple diagram]()

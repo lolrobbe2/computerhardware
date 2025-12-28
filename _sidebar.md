@@ -4,6 +4,7 @@
   * [multi level machines](/CHAPTER1/multilevel_machines.md)
   * [compiler](/CHAPTER1/compiler.md)
   * [von neumann](/CHAPTER1/von_neumann_architecture.md)
+  * [questions](/CHAPTER1/questions.md)
 * [Chapter 2](/CHAPTER2/CHAPTER2.md)
   * Architecture
     * [Processors](/CHAPTER2/Processors.md)
@@ -16,3 +17,5 @@
     * [Data Parallel](/CHAPTER2/DesignPrinciples/data_parallel.md)
     * [Multi Processor](/CHAPTER2/DesignPrinciples/multi_processor.md)
   * [Memory](/CHAPTER2/Memory.md)
+  * [RAID](/CHAPTER2/RAID.md)
+  * [Questions](/CHAPTER2/questions.md)

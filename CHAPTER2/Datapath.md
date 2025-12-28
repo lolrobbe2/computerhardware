@@ -7,7 +7,7 @@ The **CPU datapath** is the part of the CPU that **moves and processes data** be
 ![Data Path](/img/CPU_datapath.png)
 
 
-## Executing an instruction
+## Executing an instruction (FDOEW)
 
 1) **FETCH** instruction
 2) **PC**++ (increase program counter)
@@ -18,4 +18,6 @@ The **CPU datapath** is the part of the CPU that **moves and processes data** be
 5) **Execute** instruction
 6) Repeat
 
-**FETCH** => **DECODE** => **EXECUTE**
+**FETCH** => **DECODE** => **OPERAND** => **EXECUTE** => **WRITE BACK**
+
+
