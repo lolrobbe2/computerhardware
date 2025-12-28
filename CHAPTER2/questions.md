@@ -251,16 +251,16 @@ persoon p = {"Wim", 50};
 ---
 
 ## (20) Why do solid-state drives have write amplification but hard disks do not?
-- SSDs use:
-  - `Flash memory` with `erase-before-write` constraint
-- Writes require:
-  - Erasing large `blocks` before writing small `pages`
-- Results in:
-  - `Multiple internal writes` for one logical write
-- This effect is called:
-  - `Write amplification`
-- HDDs:
-  - Can overwrite data `in place`
-  - Do not need erase cycles
-- Therefore:
-  - No write amplification in `magnetic disks`
+- SSDs use `NAND flash memory`, which has unique constraints:
+  - **Reads:** Data is read at the `page level` (4–16 KB); no erase needed
+  - **Writes (programs):** Can only write to an `empty (erased) page`; no in-place overwrite
+  - **Erase:** Happens at the `block level` (128–1024 pages per block) and is relatively slow
+  - **Modify/update:** To change data, the SSD writes a `new copy to a fresh page` and marks the old page `invalid`; updates the `logical-to-physical map`
+  - **Cleanup (garbage collection):** Moves valid pages together and erases whole blocks to free space
+- These extra internal operations cause `write amplification`—more physical writes than logical writes
+- Hard disks (HDDs):
+  - Can `overwrite data in place`
+  - Do not require block erasure or page remapping
+- Result: `No write amplification` on classical magnetic disks
+
+

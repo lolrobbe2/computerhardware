@@ -17,5 +17,8 @@
     * [Data Parallel](/CHAPTER2/DesignPrinciples/data_parallel.md)
     * [Multi Processor](/CHAPTER2/DesignPrinciples/multi_processor.md)
   * [Memory](/CHAPTER2/Memory.md)
-  * [RAID](/CHAPTER2/RAID.md)
+  * Permanent Storage
+    * [RAID](/CHAPTER2/RAID.md)
+    * [SSD](/CHAPTER2/SolidStateDisks.md)
+  * [buses](/CHAPTER2/buses.md)
   * [Questions](/CHAPTER2/questions.md)
