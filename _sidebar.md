@@ -21,4 +21,5 @@
     * [RAID](/CHAPTER2/RAID.md)
     * [SSD](/CHAPTER2/SolidStateDisks.md)
   * [buses](/CHAPTER2/buses.md)
+  * [character codes](/CHAPTER2/character_codes.md)
   * [Questions](/CHAPTER2/questions.md)

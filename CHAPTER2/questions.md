@@ -24,6 +24,17 @@
   - [(18) Why does RAID-4 have a write penalty? Proof with 4 I/O operations](#18-why-does-raid-4-have-a-write-penalty-proof-with-4-io-operations)
   - [(19) What does mechanically synchronized mean in RAID-2 and why is RAID-2 more reliable than RAID-3?](#19-what-does-mechanically-synchronized-mean-in-raid-2-and-why-is-raid-2-more-reliable-than-raid-3)
   - [(20) Why do solid-state drives have write amplification but hard disks do not?](#20-why-do-solid-state-drives-have-write-amplification-but-hard-disks-do-not)
+  - [(21) NO LONGER APPLICABLE](#21-no-longer-applicable)
+  - [(22) What is the problem when using DMA together with cache memory?](#22-what-is-the-problem-when-using-dma-together-with-cache-memory)
+  - [(23) Step-by-step: how does the CPU issue an I/O command and how does the device respond?](#23-step-by-step-how-does-the-cpu-issue-an-io-command-and-how-does-the-device-respond)
+  - [(24) Which priority does the CPU get on a shared bus and why? What is this called?](#24-which-priority-does-the-cpu-get-on-a-shared-bus-and-why-what-is-this-called)
+  - [(25) What is the function of the embedded CPU in a laser printer?](#25-what-is-the-function-of-the-embedded-cpu-in-a-laser-printer)
+  - [(26) How are gray levels produced?](#26-how-are-gray-levels-produced)
+  - [(27) Why is color printing not trivial? Which color models are used?](#27-why-is-color-printing-not-trivial-which-color-models-are-used)
+  - [(28) What are the limitations of ASCII and how was it originally extended?](#28-what-are-the-limitations-of-ascii-and-how-was-it-originally-extended)
+  - [(29) Unicode uses 16-bit characters: what problems occurred and how was it extended without increasing bits?](#29-unicode-uses-16-bit-characters-what-problems-occurred-and-how-was-it-extended-without-increasing-bits)
+  - [(30) Properties of UTF-8](#30-properties-of-utf-8)
+    - [3-byte UTF-8 sequence](#3-byte-utf-8-sequence)
 
 ## (5) What is the idea behind a CISC architecture?
 - Provide `many complex` instructions that can `perform multiple` low-level `operations` in a `single instruction`
@@ -263,4 +274,108 @@ persoon p = {"Wim", 50};
   - Do not require block erasure or page remapping
 - Result: `No write amplification` on classical magnetic disks
 
+## (21) NO LONGER APPLICABLE
+
+## (22) What is the problem when using DMA together with cache memory?
+- DMA bypasses the CPU cache
+- Cache and main memory can become **inconsistent**
+- Issues:
+  - CPU may read **stale data**
+  - DMA may overwrite data still present in cache
+- Solutions:
+  - Cache flush / invalidate
+  - Hardware cache coherency
+
+---
+
+## (23) Step-by-step: how does the CPU issue an I/O command and how does the device respond?
+- CPU:
+  - Writes command and parameters to I/O registers
+- I/O device:
+  - Starts the operation
+  - Transfers data (optionally via DMA)
+- Completion:
+  - Device raises an **interrupt**
+  - CPU reads status/data from I/O registers
+
+---
+
+## (24) Which priority does the CPU get on a shared bus and why? What is this called?
+- CPU gets the **lowest priority**
+- Reason:
+  - I/O devices are often **time-critical**
+- This mechanism is called:
+  - **Bus arbitration**
+  - CPU may be temporarily **blocked**
+
+---
+
+## (25) What is the function of the embedded CPU in a laser printer?
+- Interprets print languages (e.g. PostScript, PCL)
+- Rasterizes pages
+- Controls:
+  - Laser
+  - Motors
+  - Paper handling
+- Manages buffers and errors
+
+---
+
+## (26) How are gray levels produced?
+- Using **halftoning / dithering**
+- Printers can only print:
+  - Black or white dots
+- Gray levels result from:
+  - Varying dot density
+
+---
+
+## (27) Why is color printing not trivial? Which color models are used?
+- Color mixing is **subtractive**
+- Inks absorb light
+- Color models:
+  - **RGB** (displays)
+  - **CMY / CMYK** (printers)
+- Conversion causes:
+  - Color shifts
+  - Calibration issues
+
+---
+
+## (28) What are the limitations of ASCII and how was it originally extended?
+- Limitations:
+  - Only **128 characters**
+  - No accented letters
+  - No non-Latin scripts
+- Extensions:
+  - **8-bit encodings**
+  - ISO-8859 family
+  - Windows-1252
+- Result:
+  - Incompatible code pages
+
+---
+
+## (29) Unicode uses 16-bit characters: what problems occurred and how was it extended without increasing bits?
+- 16-bit limit → **65,536 characters**
+- Problem:
+  - Not enough for all scripts
+- Solution:
+  - **Surrogate pairs**
+  - Two 16-bit units per character
+
+---
+
+## (30) Properties of UTF-8
+- Variable length: **1–4 bytes**
+- ASCII compatible:
+  - ASCII = 1 byte (`0xxxxxxx`)
+- Self-synchronizing
+- Efficient for Latin text
+
+### 3-byte UTF-8 sequence
+- Format:
+  - `1110xxxx 10xxxxxx 10xxxxxx`
+- ASCII representation:
+  - Identical byte values as ASCII
 
